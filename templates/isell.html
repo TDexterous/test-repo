@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-iSell | iSell</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Revnomix | Web-iSell</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/web-isell">iSell</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="reports.html">Reports</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="/onboard">Onboarding</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-primary text-white text-center py-4">
+      <h1>📊 iSell Report</h1>
+      <p>Occupancy based pricing and recomendations for your properties in one place.</p>
+    </header>
+
+    <!-- iSell Section -->
+
+    <section class="container my-5">
+
+      <!-- Tabs Navigation -->
+      <ul class="nav nav-tabs" id="reportTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab">iSell Report</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary" type="button" role="tab">AI Based Summary✨</button>
+        </li>
+      </ul>
+
+      <!-- Tab Content -->
+      <div class="tab-content border border-top-0 p-3 bg-white" id="reportTabContent">
+
+        <!-- Tab 1: Detailed Report -->
+        <div class="tab-pane fade show active" id="details" role="tabpanel">
+          
+          <!-- Filters Section -->
+          <form method="get" class="mb-3">
+            <div class="row g-3">
+              <div class="col-md-2">
+                <label for="categoryFilter" class="form-label">Property Name</label>
+                <select class="form-select" id="categoryFilter" name="category">
+                  <option selected>Property-1</option>
+                  <option>Property-2</option>
+                  <option>Property-3</option>
+                  <option>Property-4</option>
+                </select>
+              </div>
+
+              <div class="col-md-2">
+                <label for="regionFilter" class="form-label">Window</label>
+                <select class="form-select" id="regionFilter" name="region">
+                  <option selected>60 days</option>
+                  <option>90 days</option>
+                  <option>180 days</option>
+                </select>
+              </div>
+
+              <div class="col-md-2">
+                <label for="statusFilter" class="form-label">Status</label>
+                <select class="form-select" id="statusFilter" name="status">
+                  <option selected>All</option>
+                  <option>Delivered</option>
+                  <option>Shipped</option>
+                  <option>Cancelled</option>
+                </select>
+              </div>
+
+              <div class="col-md-2">
+                <label for="dateRange" class="form-label">From Date</label>
+                <input type="date" class="form-control mb-1" name="from_date">
+              </div>
+          
+          <div class="col-md-2">
+                <label for="dateRange" class="form-label">To Date</label>
+                <input type="date" class="form-control mb-1" name="to_date">
+              </div>
+
+              <div class="col-12 d-flex justify-content-end mt-2">
+                <button type="submit" class="btn btn-success">View iSell</button>
+                <!-- <button type="reset" class="btn btn-outline-secondary ms-2">Reset</button> -->
+              </div>
+            </div>
+          </form>
+
+          <!-- Table -->
+          <div class="table-responsive">
+            <h2 class="text-center mb-4">iSell - Property Name</h2>
+            <table class="table table-bordered table-striped table-hover">
+              <thead class="table-dark">
+                <tr>
+                  <th>Date</th>
+                  <th>Dow</th>
+                  <th>Event</th>
+                  <th>Occ%</th>
+                  <th>Capacity</th>
+                  <th>Availability</th>
+                  <th>RevPAR</th>
+                  <th>Rooms</th>
+                  <th>ADR</th>
+                  <th>Rooms Pickup</th>
+                  <th class="text-nowrap">Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-nowrap">2025-06-15</td>
+                  <td>Mon</td>
+                  <td>-</td>
+                  <td class="table-success fw-bold">150</td>
+                  <td>60</td>
+                  <td>3750 <span class="text-success fw-bold">&#9650;</span></td>
+                  <td>North</td>
+                  <td>Alice</td>
+                  <td>Retail</td>
+                  <td>10%</td>
+                  <td class="text-nowrap">2025-03-01</td>
+                  <td>Delivered</td>
+                </tr>
+                <tr>
+                  <td class="text-nowrap">2025-06-16</td>
+                  <td>Tue</td>
+                  <td>Thanks Giving</td>
+                  <td>80</td>
+                  <td>60</td>
+                  <td>3200 <span class="text-success fw-bold">&#9650;</span></td>
+                  <td>South</td>
+                  <td>Bob</td>
+                  <td>Online</td>
+                  <td>5%</td>
+                  <td class="text-nowrap">2025-03-02</td>
+                  <td>Shipped</td>
+                </tr>
+                <tr>
+                  <td class="text-nowrap">2025-06-17</td>
+                  <td>Wed</td>
+                  <td>-</td>
+                  <td class="table-success fw-bold">300</td>
+                  <td>60</td>
+                  <td>900 <span class="text-danger fw-bold">&#9660;</span></td>
+                  <td>West</td>
+                  <td>Carol</td>
+                  <td>Retail</td>
+                  <td>0%</td>
+                  <td class="text-nowrap">2025-03-05</td>
+                  <td>Delivered</td>
+                </tr>
+                <!-- Add 7 more rows similarly -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination Controls -->
+          <div class="d-flex justify-content-between align-items-center mt-4">
+            <div>
+              Showing <strong>1</strong> to <strong>10</strong> of <strong>100</strong> entries
+            </div>
+            <nav>
+              <ul class="pagination mb-0">
+                <li class="page-item disabled"><a class="page-link">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+          </div>
+
+        <!-- Export iSell -->
+        <div class="col-12 d-flex justify-content-end mt-2">
+          <button type="submit" class="btn btn-dark">Export iSell</button>
+          <!-- <button type="reset" class="btn btn-outline-secondary ms-2">Reset</button> -->
+        </div>
+
+        </div>
+
+        <!-- Tab 2: Summary -->
+        <div class="tab-pane fade" id="summary" role="tabpanel">
+          <h5 class="mt-2">AI Based Summary - Property Name</h5>
+          <p>
+            This report summarizes the performance of various products across regions. Sales figures are color-coded to highlight high-volume and low-price items. The arrows next to the revenue indicate whether a product is performing above or below target thresholds. Use the filters above to refine your view.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2024 Revnomix. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+  </body>
+</html>
